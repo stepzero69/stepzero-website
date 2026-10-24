@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Datenschutz – StepZero</title>
+<style>
+:root {
+  --bg: #090C11;
+  --surface: #111620;
+  --border: rgba(255,255,255,0.07);
+  --accent: #5B9BD5;
+  --accent-dim: rgba(91,155,213,0.12);
+  --fg: #E2E8F4;
+  --fg-2: #7A8599;
+  color-scheme: dark;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+nav {
+  background: rgba(9,12,17,0.95);
+  border-bottom: 1px solid var(--border);
+  padding: 14px max(24px, env(safe-area-inset-left, 0px));
+}
+.nav-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.nav-back { color: var(--accent); text-decoration: none; font-size: 14px; }
+.nav-back:hover { opacity: 0.8; }
+.nav-divider { color: var(--fg-2); font-size: 14px; }
+.nav-current { color: var(--fg-2); font-size: 14px; }
+main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 56px max(24px, env(safe-area-inset-left, 0px)) 80px;
+}
+.page-header {
+  margin-bottom: 48px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--border);
+}
+.page-label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+h1 {
+  font-size: 36px;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+  margin-bottom: 12px;
+}
+.page-meta { font-size: 14px; color: var(--fg-2); }
+.section { margin-bottom: 40px; }
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-bottom: 14px;
+  color: var(--fg);
+}
+p {
+  font-size: 15px;
+  color: var(--fg-2);
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+p:last-child { margin-bottom: 0; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.info-block {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin-bottom: 12px;
+}
+.info-block p { margin-bottom: 4px; }
+.info-block p:last-child { margin-bottom: 0; }
+.divider { height: 1px; background: var(--border); margin: 40px 0; }
+footer {
+  border-top: 1px solid var(--border);
+  padding: 28px max(24px, env(safe-area-inset-left, 0px));
+  text-align: center;
+}
+footer p { font-size: 13px; color: var(--fg-2); }
+footer a { color: var(--accent); }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-back">← StepZero</a>
+    <span class="nav-divider">/</span>
+    <span class="nav-current">Datenschutz</span>
+  </div>
+</nav>
+
+<main>
+  <div class="page-header">
+    <div class="page-label">Rechtliches</div>
+    <h1>Datenschutzerklärung</h1>
+    <p class="page-meta">Datenschutzerklärung gemäß DSGVO und österreichischem Datenschutzgesetz (DSG)</p>
+  </div>
+
+  <div class="section">
+    <h2>1. Verantwortlicher</h2>
+    <div class="info-block">
+      <p><strong>Emil Gruber</strong></p>
+      <p>Anton Wladar Straße 15</p>
+      <p>2100 Korneuburg</p>
+      <p>Österreich</p>
+      <p>E-Mail: <a href="mailto:support@usestepzero.com">support@usestepzero.com</a></p>
+    </div>
+    <p>Verantwortlicher im Sinne der Datenschutz-Grundverordnung (DSGVO) und des österreichischen Datenschutzgesetzes (DSG) ist die oben genannte Person.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section">
+    <h2>2. Erhobene Daten</h2>
+    <p>Bei der Nutzung der StepZero App und Website werden folgende Daten verarbeitet:</p>
+    <p><strong>Bei der App-Nutzung:</strong> E-Mail-Adresse (bei Registrierung), Nutzungsdaten (Streak-Daten, Check-ins, Rituale), technische Gerätedaten (Betriebssystem, App-Version).</p>
+    <p><strong>Beim Besuch der Website:</strong> IP-Adresse (anonymisiert), Zeitpunkt des Zugriffs, aufgerufene Seiten, verwendeter Browser und Betriebssystem.</p>
+  </div>
+
+  <div class="section">
+    <h2>3. Zweck der Verarbeitung</h2>
+    <p>Deine Daten werden ausschließlich für folgende Zwecke verarbeitet:</p>
+    <p>Bereitstellung der App-Funktionen (Rituale, Streaks, AI Coach), Verbesserung der App und Behebung von Fehlern, Kommunikation bei Support-Anfragen sowie Einhaltung rechtlicher Verpflichtungen.</p>
+  </div>
+
+  <div class="section">
+    <h2>4. Rechtsgrundlage</h2>
+    <p>Die Verarbeitung deiner Daten erfolgt auf Basis von Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung) für die App-Nutzung, Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse) für die Website-Analyse sowie Art. 6 Abs. 1 lit. a DSGVO (Einwilligung) wo explizit erteilt.</p>
+  </div>
+
+  <div class="section">
+    <h2>5. Speicherdauer</h2>
+    <p>Deine Daten werden nur so lange gespeichert, wie es für die genannten Zwecke notwendig ist oder gesetzliche Aufbewahrungspflichten bestehen. Account-Daten werden nach Konto-Löschung innerhalb von 30 Tagen vollständig entfernt.</p>
+  </div>
+
+  <div class="section">
+    <h2>6. Weitergabe an Dritte</h2>
+    <p>Deine Daten werden nicht an Dritte verkauft. Eine Weitergabe erfolgt nur an technische Dienstleister (Hosting, Datenbank), die als Auftragsverarbeiter gemäß Art. 28 DSGVO vertraglich gebunden sind, sowie wenn gesetzlich vorgeschrieben.</p>
+  </div>
+
+  <div class="section">
+    <h2>7. Hosting und technische Infrastruktur</h2>
+    <p>Diese Website wird über Cloudflare Pages gehostet (Cloudflare, Inc., 101 Townsend St., San Francisco, CA 94107, USA). Cloudflare ist nach dem EU-US Data Privacy Framework zertifiziert. Die App-Daten werden über Supabase verarbeitet, einem europäischen Datenbankdienst.</p>
+    <p>Auf dieser Website werden keine Cookies gesetzt und keine externen Schriften (z. B. Google Fonts) geladen.</p>
+  </div>
+
+  <div class="section">
+    <h2>8. Deine Rechte</h2>
+    <p>Du hast das Recht auf Auskunft über deine gespeicherten Daten (Art. 15 DSGVO), Berichtigung unrichtiger Daten (Art. 16 DSGVO), Löschung deiner Daten (Art. 17 DSGVO), Einschränkung der Verarbeitung (Art. 18 DSGVO), Datenübertragbarkeit (Art. 20 DSGVO) sowie Widerspruch gegen die Verarbeitung (Art. 21 DSGVO).</p>
+    <p>Zur Ausübung deiner Rechte wende dich an: <a href="mailto:support@usestepzero.com">support@usestepzero.com</a></p>
+  </div>
+
+  <div class="section">
+    <h2>9. Beschwerderecht</h2>
+    <p>Du hast das Recht, bei der österreichischen Datenschutzbehörde Beschwerde einzulegen:</p>
+    <div class="info-block">
+      <p><strong>Österreichische Datenschutzbehörde</strong></p>
+      <p>Barichgasse 40–42, 1030 Wien</p>
+      <p>E-Mail: <a href="mailto:dsb@dsb.gv.at">dsb@dsb.gv.at</a></p>
+      <p>Website: <a href="https://www.dsb.gv.at" target="_blank" rel="noopener">www.dsb.gv.at</a></p>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <p style="font-size:13px; color: var(--fg-2);">Stand: Oktober 2026</p>
+</main>
+
+<footer>
+  <p>© 2026 Emil Gruber · <a href="/">Zurück zur Website</a> · <a href="/impressum">Impressum</a></p>
+</footer>
+
+</body>
+</html>
