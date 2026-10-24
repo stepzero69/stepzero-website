@@ -1,10 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>StepZero</title>
+<meta name="claude:viewport-fit-sides" content="cover">
 <style>
+/* Layout: full-bleed dark sections, content max 1080px */
 :root {
   --bg: #090C11;
   --surface: #111620;
@@ -18,7 +15,9 @@
   --fg-3: #3D4A5C;
   color-scheme: dark;
 }
+
 *, *::before, *::after { box-sizing: border-box; margin: 0; }
+
 body {
   background: var(--bg);
   color: var(--fg);
@@ -27,12 +26,15 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
+
 .inner {
   max-width: 1080px;
   margin: 0 auto;
   padding-left: max(24px, env(safe-area-inset-left, 0px));
   padding-right: max(24px, env(safe-area-inset-right, 0px));
 }
+
+/* ── NAV ── */
 nav {
   position: sticky;
   top: env(safe-area-inset-top, 0px);
@@ -65,7 +67,12 @@ nav .inner {
   font-size: 13px;
   font-weight: 600;
 }
-.hero { padding-block: 100px 80px; text-align: center; }
+
+/* ── HERO ── */
+.hero {
+  padding-block: 100px 80px;
+  text-align: center;
+}
 .eyebrow {
   display: inline-block;
   font-size: 11px;
@@ -113,6 +120,7 @@ h1 em { font-style: normal; color: var(--accent); }
   animation: pulse 2s ease-in-out infinite;
 }
 @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
 .btn-ghost {
   display: inline-block;
   background: transparent;
@@ -127,6 +135,8 @@ h1 em { font-style: normal; color: var(--accent); }
   transition: border-color 0.15s, color 0.15s;
 }
 .btn-ghost:hover { border-color: var(--accent); color: var(--fg); }
+
+/* ── SCREENSHOTS ── */
 .screenshots { padding-block: 56px 64px; }
 .screenshots .inner { padding-right: 0; }
 .scroll-hint {
@@ -147,21 +157,39 @@ h1 em { font-style: normal; color: var(--accent); }
   scrollbar-width: none;
 }
 .screens-row::-webkit-scrollbar { display: none; }
-.screen { flex-shrink: 0; scroll-snap-align: start; width: 180px; }
+.screen {
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  width: 180px;
+}
 .screen-frame {
   width: 180px;
-  height: 320px;
+  height: 390px;
   background: var(--surface);
   border-radius: 24px;
   border: 1px solid var(--border);
   overflow: hidden;
   position: relative;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
 }
-.screen-frame img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
-.screen-name { font-size: 12px; color: var(--fg-2); text-align: center; margin-top: 10px; font-weight: 500; }
+.screen-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: top;
+  border-radius: 0;
+}
+.screen-name {
+  font-size: 12px;
+  color: var(--fg-2);
+  text-align: center;
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+/* placeholder for when images not yet loaded */
 .screen-placeholder {
   width: 100%;
   height: 100%;
@@ -175,13 +203,18 @@ h1 em { font-style: normal; color: var(--accent); }
   letter-spacing: 0.04em;
 }
 .screen-placeholder svg { width: 28px; height: 28px; opacity: 0.4; }
+
+/* ── STATS ── */
 .stats { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 .stats-row {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   text-align: center;
 }
-.stat { padding: 36px 16px; border-right: 1px solid var(--border); }
+.stat {
+  padding: 36px 16px;
+  border-right: 1px solid var(--border);
+}
 .stat:last-child { border-right: none; }
 .stat-num {
   font-size: 38px;
@@ -193,6 +226,8 @@ h1 em { font-style: normal; color: var(--accent); }
   margin-bottom: 6px;
 }
 .stat-label { font-size: 13px; color: var(--fg-2); }
+
+/* ── FEATURES ── */
 .features { background: var(--surface); padding-block: 80px; }
 .section-header { text-align: center; margin-bottom: 48px; }
 .section-header h2 {
@@ -203,6 +238,7 @@ h1 em { font-style: normal; color: var(--accent); }
   margin-bottom: 12px;
 }
 .section-header p { color: var(--fg-2); font-size: 17px; max-width: 440px; margin: 0 auto; }
+
 .feature-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -226,8 +262,14 @@ h1 em { font-style: normal; color: var(--accent); }
 }
 .feature-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 7px; letter-spacing: -0.01em; }
 .feature-card p { font-size: 13px; color: var(--fg-2); line-height: 1.55; }
+
+/* ── HOW IT WORKS ── */
 .how { padding-block: 80px; }
-.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
 .step-num {
   width: 34px; height: 34px;
   border-radius: 50%;
@@ -239,6 +281,8 @@ h1 em { font-style: normal; color: var(--accent); }
 }
 .step h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.01em; }
 .step p { font-size: 14px; color: var(--fg-2); line-height: 1.6; }
+
+/* ── CTA BAND ── */
 .cta-band {
   background: var(--surface);
   border-top: 1px solid var(--border);
@@ -253,7 +297,12 @@ h1 em { font-style: normal; color: var(--accent); }
   margin-bottom: 12px;
 }
 .cta-band p { color: var(--fg-2); font-size: 17px; margin-bottom: 36px; }
-footer { border-top: 1px solid var(--border); padding-block: 36px; }
+
+/* ── FOOTER ── */
+footer {
+  border-top: 1px solid var(--border);
+  padding-block: 36px;
+}
 footer .inner {
   display: flex;
   align-items: center;
@@ -268,6 +317,7 @@ footer .inner {
 .footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
 .footer-links a { color: var(--fg-2); text-decoration: none; font-size: 13px; transition: color 0.15s; }
 .footer-links a:hover { color: var(--fg); }
+
 @media (max-width: 700px) {
   .stats-row { grid-template-columns: 1fr 1fr; }
   .stat { border-bottom: 1px solid var(--border); }
@@ -277,9 +327,8 @@ footer .inner {
   footer .inner { flex-direction: column; align-items: flex-start; }
 }
 </style>
-</head>
-<body>
 
+<!-- NAV -->
 <nav>
   <div class="inner">
     <a href="/" class="nav-logo" aria-label="StepZero">
@@ -294,6 +343,7 @@ footer .inner {
   </div>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
   <div class="inner">
     <div class="eyebrow">Coming Soon</div>
@@ -308,6 +358,7 @@ footer .inner {
   </div>
 </section>
 
+<!-- SCREENSHOT STRIP -->
 <section class="screenshots">
   <div class="inner">
     <div class="scroll-hint">INSIDE THE APP</div>
@@ -315,56 +366,80 @@ footer .inner {
       <div class="screen">
         <div class="screen-frame">
           <img src="screenshots/missions.png" alt="Missions" onerror="this.style.display='none';this.nextElementSibling.hidden=false">
-          <div class="screen-placeholder" hidden><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="9" r="5" stroke="currentColor" stroke-width="1.5"/><path d="M5 20c0-3.314 3.134-6 7-6s7 2.686 7 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>Missions</div>
+          <div class="screen-placeholder" hidden>
+            <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="9" r="5" stroke="currentColor" stroke-width="1.5"/><path d="M5 20c0-3.314 3.134-6 7-6s7 2.686 7 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            Missions
+          </div>
         </div>
         <div class="screen-name">Missions</div>
       </div>
       <div class="screen">
         <div class="screen-frame">
           <img src="screenshots/streak.png" alt="Streak" onerror="this.style.display='none';this.nextElementSibling.hidden=false">
-          <div class="screen-placeholder" hidden><svg viewBox="0 0 24 24" fill="none"><path d="M12 2C8 6 6 10 8 14c1 2 3 3 4 3-1-2 0-4 2-5 0 3 2 5 3 7 2-1 3-4 1-7 3 1 4 5 3 8 2-1 3-3 3-5 0-6-6-11-12-13z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Streak</div>
+          <div class="screen-placeholder" hidden>
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 2C8 6 6 10 8 14c1 2 3 3 4 3-1-2 0-4 2-5 0 3 2 5 3 7 2-1 3-4 1-7 3 1 4 5 3 8 2-1 3-3 3-5 0-6-6-11-12-13z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Streak
+          </div>
         </div>
         <div class="screen-name">Streak</div>
       </div>
       <div class="screen">
         <div class="screen-frame">
           <img src="screenshots/checkin.png" alt="Morning Check-In" onerror="this.style.display='none';this.nextElementSibling.hidden=false">
-          <div class="screen-placeholder" hidden><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>Check-In</div>
+          <div class="screen-placeholder" hidden>
+            <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            Check-In
+          </div>
         </div>
         <div class="screen-name">Morning Check-In</div>
       </div>
       <div class="screen">
         <div class="screen-frame">
           <img src="screenshots/coach.png" alt="Coach Zero" onerror="this.style.display='none';this.nextElementSibling.hidden=false">
-          <div class="screen-placeholder" hidden><svg viewBox="0 0 24 24" fill="none"><path d="M4 4h16v12H4z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M8 20h8M12 16v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>Coach Zero</div>
+          <div class="screen-placeholder" hidden>
+            <svg viewBox="0 0 24 24" fill="none"><path d="M4 4h16v12H4z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M8 20h8M12 16v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            Coach Zero
+          </div>
         </div>
         <div class="screen-name">Coach Zero</div>
       </div>
       <div class="screen">
         <div class="screen-frame">
           <img src="screenshots/academy.png" alt="The Academy" onerror="this.style.display='none';this.nextElementSibling.hidden=false">
-          <div class="screen-placeholder" hidden><svg viewBox="0 0 24 24" fill="none"><path d="M4 19V9l8-6 8 6v10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><rect x="9" y="14" width="6" height="5" stroke="currentColor" stroke-width="1.5"/></svg>The Academy</div>
+          <div class="screen-placeholder" hidden>
+            <svg viewBox="0 0 24 24" fill="none"><path d="M4 19V9l8-6 8 6v10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><rect x="9" y="14" width="6" height="5" stroke="currentColor" stroke-width="1.5"/></svg>
+            The Academy
+          </div>
         </div>
         <div class="screen-name">The Academy</div>
       </div>
       <div class="screen">
         <div class="screen-frame">
           <img src="screenshots/quests.png" alt="Quests" onerror="this.style.display='none';this.nextElementSibling.hidden=false">
-          <div class="screen-placeholder" hidden><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M12 8v4M12 16h.01" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>Quests</div>
+          <div class="screen-placeholder" hidden>
+            <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M12 8v4M12 16h.01" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            Quests
+          </div>
         </div>
         <div class="screen-name">Quests</div>
       </div>
       <div class="screen">
         <div class="screen-frame">
           <img src="screenshots/deepwork.png" alt="Deep Work" onerror="this.style.display='none';this.nextElementSibling.hidden=false">
-          <div class="screen-placeholder" hidden><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>Deep Work</div>
+          <div class="screen-placeholder" hidden>
+            <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            Deep Work
+          </div>
         </div>
         <div class="screen-name">Deep Work</div>
       </div>
       <div class="screen">
         <div class="screen-frame">
           <img src="screenshots/wheel.png" alt="Daily Wheel" onerror="this.style.display='none';this.nextElementSibling.hidden=false">
-          <div class="screen-placeholder" hidden><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="2" fill="currentColor"/></svg>Daily Wheel</div>
+          <div class="screen-placeholder" hidden>
+            <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="2" fill="currentColor"/></svg>
+            Daily Wheel
+          </div>
         </div>
         <div class="screen-name">Daily Wheel</div>
       </div>
@@ -372,17 +447,31 @@ footer .inner {
   </div>
 </section>
 
+<!-- STATS -->
 <div class="stats">
   <div class="inner">
     <div class="stats-row">
-      <div class="stat"><div class="stat-num">60</div><div class="stat-label">Days per Season</div></div>
-      <div class="stat"><div class="stat-num">25+</div><div class="stat-label">Achievements</div></div>
-      <div class="stat"><div class="stat-num">8</div><div class="stat-label">Core Features</div></div>
-      <div class="stat"><div class="stat-num">0€</div><div class="stat-label">To Get Started</div></div>
+      <div class="stat">
+        <div class="stat-num">60</div>
+        <div class="stat-label">Days per Season</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">25+</div>
+        <div class="stat-label">Achievements</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">8</div>
+        <div class="stat-label">Core Features</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">9,99€</div>
+        <div class="stat-label">Per Month</div>
+      </div>
     </div>
   </div>
 </div>
 
+<!-- FEATURES -->
 <section class="features" id="features">
   <div class="inner">
     <div class="section-header">
@@ -390,16 +479,41 @@ footer .inner {
       <p>Not motivation. A system.</p>
     </div>
     <div class="feature-grid">
-      <div class="feature-card"><div class="feature-icon">🎯</div><h3>Daily Missions</h3><p>Set your 3 daily tasks — Run 10 minutes. Cold shower. Read 20 pages. Each earns XP. Each moves the needle.</p></div>
-      <div class="feature-card"><div class="feature-icon">🔥</div><h3>Streak &amp; Seasons</h3><p>60-day seasons. A visual grid that fills one dot per day. Milestones at 7, 14, 30 days — achievements you actually earn.</p></div>
-      <div class="feature-card"><div class="feature-icon">🤖</div><h3>Coach Zero</h3><p>Your AI coach knows what day you're on, what's open, and what's next. No generic advice — direct, personal, sharp.</p></div>
-      <div class="feature-card"><div class="feature-icon">📚</div><h3>The Academy</h3><p>Courses on Dopamine Reset, Neurofocus, Digital Productivity and more. Audiobooks. Knowledge that actually applies.</p></div>
-      <div class="feature-card"><div class="feature-icon">⚡</div><h3>Quests</h3><p>Daily, weekly and monthly challenges worth real coins. Message your coach. Resist 3 urges. Hit a 30-day streak. +200 coins.</p></div>
-      <div class="feature-card"><div class="feature-icon">⏱</div><h3>Deep Work Timer</h3><p>30, 60 or custom minutes. Phone away. One button. Themed backgrounds to get in the zone and stay there.</p></div>
+      <div class="feature-card">
+        <div class="feature-icon">🎯</div>
+        <h3>Daily Missions</h3>
+        <p>Set your 3 daily tasks — Run 10 minutes. Cold shower. Read 20 pages. Each earns XP. Each moves the needle.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔥</div>
+        <h3>Streak & Seasons</h3>
+        <p>60-day seasons. A visual grid that fills one dot per day. Milestones at 7, 14, 30 days — achievements you actually earn.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🤖</div>
+        <h3>Coach Zero</h3>
+        <p>Your AI coach knows what day you're on, what's open, and what's next. No generic advice — direct, personal, sharp.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📚</div>
+        <h3>The Academy</h3>
+        <p>Courses on Dopamine Reset, Neurofocus, Digital Productivity and more. Audiobooks. Knowledge that actually applies.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">⚡</div>
+        <h3>Quests</h3>
+        <p>Daily, weekly and monthly challenges worth real coins. Message your coach. Resist 3 urges. Hit a 30-day streak. +200 coins.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">⏱</div>
+        <h3>Deep Work Timer</h3>
+        <p>30, 60 or custom minutes. Phone away. One button. Themed backgrounds to get in the zone and stay there.</p>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- HOW IT WORKS -->
 <section class="how">
   <div class="inner">
     <div class="section-header">
@@ -407,13 +521,26 @@ footer .inner {
       <p>Simple enough to start today. Deep enough to stick.</p>
     </div>
     <div class="steps">
-      <div class="step"><div class="step-num">1</div><h3>Set your missions</h3><p>Choose 3 daily tasks that move you forward. They stay until you change them — no daily setup, no friction.</p></div>
-      <div class="step"><div class="step-num">2</div><h3>Check in every morning</h3><p>Log your sleep quality, energy level, how you feel. Takes 20 seconds. Gives you a readiness score for the day.</p></div>
-      <div class="step"><div class="step-num">3</div><h3>Stack the days</h3><p>Earn XP. Spin the daily wheel. Unlock achievements. Watch 60 days fill up one dot at a time.</p></div>
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Set your missions</h3>
+        <p>Choose 3 daily tasks that move you forward. They stay until you change them — no daily setup, no friction.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Check in every morning</h3>
+        <p>Log your sleep quality, energy level, how you feel. Takes 20 seconds. Gives you a readiness score for the day.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Stack the days</h3>
+        <p>Earn XP. Spin the daily wheel. Unlock achievements. Watch 60 days fill up one dot at a time.</p>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- CTA BAND -->
 <section class="cta-band">
   <div class="inner">
     <h2>Day one starts now.</h2>
@@ -425,6 +552,7 @@ footer .inner {
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
   <div class="inner">
     <div class="footer-left">
@@ -444,6 +572,3 @@ footer .inner {
     </div>
   </div>
 </footer>
-
-</body>
-</html>
